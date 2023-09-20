@@ -82,3 +82,4 @@ main = do
 
     putStrLn "\n\n--- sumList' ---"
     print (sumList' [1..10])
+    print (filterValidEmail emailList)
