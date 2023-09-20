@@ -40,6 +40,18 @@ filterValidEmail xs =
     where 
         isValid email = '@' `elem` email &&  '.' `elem` email
 
+
+sumList :: Num a => [a] -> a
+sumList [] = 0
+sumList (x:xs) = x + sumList xs
+
+
+sumList' :: Num a => [a] -> a
+sumList' list = case list of
+    [] -> 0
+    (x:xs) -> x + sumList' xs
+
+
 main :: IO()
 main = do
 
@@ -64,3 +76,9 @@ main = do
 
     putStrLn "\n\n--- emailListValid ---"
     print (filterValidEmail emailList)
+
+    putStrLn "\n\n--- sumList ---"
+    print (sumList [1..10])
+
+    putStrLn "\n\n--- sumList' ---"
+    print (sumList' [1..10])
