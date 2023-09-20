@@ -52,6 +52,18 @@ sumList' list = case list of
     (x:xs) -> x + sumList' xs
 
 
+
+foo x =
+    [case x of
+        'a' -> 10
+        'b' -> 11
+        'c' -> 12
+        'd' -> 13
+        'e' -> 14
+        'f' -> 15
+        _ -> error "Invalid hex digit"
+    ,1]
+
 main :: IO()
 main = do
 
@@ -83,3 +95,6 @@ main = do
     putStrLn "\n\n--- sumList' ---"
     print (sumList' [1..10])
     print (filterValidEmail emailList)
+
+    putStrLn "\n\n--- foo ---"
+    print (foo 'a')
